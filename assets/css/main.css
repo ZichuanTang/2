@@ -1,51 +1,29 @@
 /*--------------------------------------------------------------
 # 全局
 --------------------------------------------------------------*/
-/*页面布局*/
+/*整体页面布局*/
 html,body{
   overflow-x: hidden;/*隐藏了水平方向上的溢出内容*/
   color:white;/*默认字体颜色设置为白色*/
   /*background: #010101;  设置整个页面的背景颜色 */
 }
-/*字体布局*/
-.flex-cc {
-  display: flex; /* 子元素使用 Flexbox 布局 */
-  flex-direction: column; /* 让子元素按列（纵向）排列 */
-  justify-content: center; /* 将子元素在垂直方向上居中对齐 */
-  align-items: center; /* 将子元素在水平方向上居中对齐 */
-}
-.content0{
+/*首页背景布局*/
+.home{
   width:100vw;/*元素的宽度为视口宽度*/
   height:100vh;/*元素的高度为视口高度*/
   background: rgba(255, 255, 255, 0); /* 设置整个页面的背景颜色 */
-  padding-top: 500px;
+  padding-top: 100px;/*内部的顶部有 100px 的内边距*/
+  padding-bottom: 50px; /* 添加底部内边距 */
+  justify-content: flex-end; /* 将子元素在垂直方向上靠下对齐 */
 }
-/*背景布局*/
-.content1{
-  width:100vw;/*元素的宽度为视口宽度*/
-  height:100vh;/*元素的高度为视口高度*/
-  background: rgba(0, 0, 0, 0.7); /* 设置整个页面的背景颜色 */
-  /*padding-left: 0px;左侧添加 300px 的内边距*/
-  /*padding-top: 0px;  上方添加 100px 的内边距 */
-/* 高斯模糊 */
-  background: rgba(255, 255, 255, 0.1); /* 半透明背景 */
-  backdrop-filter: blur(10px); /* 高斯模糊 */
-  -webkit-backdrop-filter: blur(10px); /* 兼容 Safari */
-  z-index: -1; /* 确保模糊背景不覆盖内容 */
-}
-.text1 {
-  font-size: 80px; /* 设置字体大小为 80px */
-  color: white;
-  font-family: 'SimKai', 'KaiTi', sans-serif; /* 设置行书字体 */
-}
-.text3{
-  font-size: 26px;
-  margin-top:32px;
-  font-weight: 300;
-  font-family: 'SimKai', 'KaiTi', sans-serif; /* 设置行书字体 */
+/*首页文本布局*/
+.home-text {
+  display: flex; /* 子元素使用 Flexbox 布局 */
+  flex-direction: column; /* 让子元素按列（纵向）排列 */
+  align-items: center; /* 将子元素在水平方向上居中对齐 */
 }
 /* 将视频作为背景 */
-.hero-video {
+.home-video {
   position: fixed;/* 固定位置 */
   top: 0;
   left: 0;
@@ -54,7 +32,71 @@ html,body{
   object-fit: cover;/* 确保视频完整覆盖背景 */
   z-index: -1;/* 确保视频在内容后面 */
 }
-.hero {
-  position: relative;/* 确保内容显示在视频上面 */
-  z-index: -1;/* 确保内容在视频上面 */
+/*关于背景布局*/
+.about{
+  width:100vw;/*元素的宽度为视口宽度*/
+  height:400vh;/*元素的高度为视口高度*/
+  background: rgba(0, 0, 0, 0.7); /* 设置整个页面的背景颜色 */
+  /* 高斯模糊 */
+  background: rgba(0, 0, 0, 0.649); /* 半透明背景 */
+  backdrop-filter: blur(10px); /* 高斯模糊 */
+  -webkit-backdrop-filter: blur(10px); /* 兼容 Safari */
+  z-index: -1; /* 确保模糊背景不覆盖内容 */
+}
+/*关于文本布局*/
+.about-text {
+  display: flex; /* 子元素使用 Flexbox 布局 */
+  flex-direction: column; /* 让子元素按列（纵向）排列 */
+  justify-content: flex-start; /* 将子元素在垂直方向上居中对齐 */
+  align-items: center; /* 将子元素在水平方向上居中对齐 */
+  padding-top: 70px; /* 添加顶部内边距 */
+}
+/*标题文本*/
+.text1 {
+  font-size: 80px; /* 设置字体大小为 80px */
+  color: white;
+  font-family: 'SimKai', 'KaiTi', sans-serif; /* 设置行书字体 */
+}
+/* 在同一个.text1元素实现英文部分设置斜体 */
+.text1 .english {
+  font-family: 'Georgia', 'Times New Roman', serif; /* 英文使用不同的字体 */
+  font-style: italic; /* 英文部分设置斜体 */
+}
+/*正文文本*/
+.text2{
+  font-size: 26px;
+  margin-top:12px;/*距离其上方元素的间距*/
+  font-weight: 300;/*粗细*/
+  max-width: 900px; /* 你可以根据需求调整这个最大宽度 */
+  font-family: 'SimKai', 'KaiTi', sans-serif; /* 设置行书字体 */
+  display: flex; /* 启用 Flexbox 布局 */
+  justify-content: center; /* 垂直方向上居中对齐 */
+  align-items: center; /* 水平方向上居中对齐 */
+  text-align: center; /* 水平对齐文本 */
+}
+/* 圆形透明按钮样式 */
+.social-icon {
+  position: relative; /* 相对定位 */
+  display: inline-flex; /* 使用 inline-flex 来让它与其他内容在同一行 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  background-color: transparent;
+  border-radius: 100%; /* 让按钮变成圆形 */
+  padding: 10px;
+  border: 2px solid #fff; /* 白色边框 */
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  /*margin-top: 20px;  确保按钮离文字有一定间距 */
+}
+/* 鼠标悬停时 */
+.social-icon:hover {
+  background-color: #fff;
+  color:#ff6347; /*番茄红作为品牌色*/
+}
+/* 图标居中 */
+.social-icon i {
+  display: inline-block;
+  text-align: center;
 }

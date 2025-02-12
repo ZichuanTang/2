@@ -29,29 +29,65 @@
     <!--导入AOS动效-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+    <!--导入typed打字动效-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- 引入 Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
 
 <body>
-    <video autoplay loop muted playsinline class="hero-video">
+    <!--视频背景-->
+    <video autoplay loop muted playsinline class="home-video">
         <source src="path_to_your_video.mp4" type="video/mp4">
         <source src="path_to_your_video.webm" type="video/webm">
         Your browser does not support the video tag.
       </video>
-    <div class="content0 flex-cc">
-		<div class="text1" data-aos="fade-up" data-aos-duration="600">Zichuan Tang</div>
-		<div class="text3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="50">欢迎来到唐子传的个人网站！</div>
-		<div class="text3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">I'm 宇宙级大学生|</div>
+    <!--第一页-->
+    <div class="home home-text">
+		<div class="text1" data-aos="fade-up" data-aos-duration="600"><span class="english">Zichuan Tang</span></div>
+		<div class="text2" data-aos="fade-up" data-aos-duration="600" data-aos-delay="50">欢迎来到<b>唐子传</b>的个人网站！</div>
+		<div class="text2" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+            <p>I'm 
+                <span class="typed" data-typed-items="宇宙级超级设计师, 闲的蛋疼的开发人员, 很自由工作者, 宇宙级大学生">老神秘研究人员</span>
+                <span class="typed-cursor typed-cursor--blink"></span>
+            </p>
+        </div>
+        <div class="text2" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150" >
+            <a href="https://github.com/Tang20041115" target="_blank" class="social-icon"><i class="bi bi-github"></i></a>&nbsp;
+            <a href="https://space.bilibili.com/1944350495" target="_blank" class="social-icon">哔</a>&nbsp;
+            <a href="https://www.zhihu.com/people/tiamo-25-21-86" target="_blank" class="social-icon">知</a>&nbsp;
+            <a href="https://www.luogu.com.cn/user/812829#practice" target="_blank" class="social-icon">洛</a>&nbsp;
+            <a href="https://blog.dotcpp.com/home/dotcpp0659127" target="_blank" class="social-icon">C</a>&nbsp;
+            <a href="https://lmarena.ai/" target="_blank" class="social-icon"><i class="bi bi-steam"></i></a>&nbsp;
+            <a href="https://web.lmarena.ai/" target="_blank" class="social-icon"><i class="bi bi-robot"></i></a>&nbsp;
+            <a href="https://www.weibo.com/u/7231794703" target="_blank" class="social-icon"><i class="bi bi-sina-weibo"></i></a>
+        </div>
+    </div>
+    <!--第二页-->
+    <div class="about about-text">
+		<div class="text1" data-aos="fade-up" data-aos-duration="600">关于我</div>
+        <div class="text2" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-easing="ease-out-back" data-aos-delay="400">
+            “你若盛开，蝴蝶自来；你若精彩，天自安排。”
+            <br>“世界如此喧嚣，唯有安静的心才能听见自己的声音。”
+        </div>
         
-    </div>
-    <div class="content1 flex-cc">
-        <div class="text3" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-easing="ease-out-back" data-aos-delay="400">
-			Being one of the top largest and influential newspapers of the</br> world it has a sophisticated high-quality website design with</br> numerous intricate layouts, myriads of</br> sections and thousands of informative pages.
-		</div>
-    </div>
-
 </body>
 <script type="text/javascript">
+     // 确保 AOS 动效初始化
     AOS.init();
+    // 确保打字效果初始化
+    const selectTyped = document.querySelector('.typed');
+    if (selectTyped) {
+    let typed_strings = selectTyped.getAttribute('data-typed-items');
+    typed_strings = typed_strings.split(',');
+    new Typed('.typed', {
+        strings: typed_strings,
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 50,
+        backDelay: 2000
+    });
+    }
 </script>
 </html>
