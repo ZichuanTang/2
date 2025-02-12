@@ -1,0 +1,29 @@
+.about-img{
+  width: 384px;  /* 固定宽度为384px (4寸) */
+  height: auto;  /* 高度自适应，根据图片的宽高比自动调整 */
+}
+.text3{
+  font-size: 26px;
+  margin-top:52px;/*距离其上方元素的间距*/
+  font-weight: 300;/*粗细*/
+  /*max-width: 900px;  你可以根据需求调整这个最大宽度 */
+  font-family: 'SimKai', 'KaiTi', sans-serif; /* 设置行书字体 */
+  display: flex; /* 启用 Flexbox 布局 */
+  justify-content: center; /* 垂直方向上居中对齐 */
+}
+.about h2{
+  margin-top:12px;/*距离其上方元素的间距*/
+  margin-left: 20px; /* 距离左边的间距 */
+  font-size: 40px;
+  font-weight: 300;/*粗细*/
+}
+.about p{
+  margin-top:12px;/*距离其上方元素的间距*/
+  font-size: 26px;
+  font-weight: 300;/*粗细*/
+}
+/* 设置链接的默认颜色 */
+.about p a {
+    color: #ffffff; /* 设置为番茄红，您可以根据需求修改颜色 */
+    text-decoration: none; /* 去除链接下划线 */
+}
