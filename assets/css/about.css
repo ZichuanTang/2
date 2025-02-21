@@ -11,6 +11,10 @@
   display: flex; /* 启用 Flexbox 布局 */
   justify-content: center; /* 垂直方向上居中对齐 */
 }
+.text3 .english {
+  font-family: 'Georgia', 'Times New Roman', serif; /* 英文使用不同的字体 */
+  font-style: italic; /* 英文部分设置斜体 */
+}
 .about h2{
   margin-top:12px;/*距离其上方元素的间距*/
   margin-left: 20px; /* 距离左边的间距 */
@@ -26,4 +30,24 @@
 .about p a {
     color: #ffffff; /* 设置为番茄红，您可以根据需求修改颜色 */
     text-decoration: none; /* 去除链接下划线 */
+}
+/*--------------------------------------------------------------
+# 一些牛逼的个人网站:
+--------------------------------------------------------------*/
+/* 圆形透明按钮样式 */
+.s-icon {
+  position: relative; /* 相对定位 */
+  display: inline-flex; /* 使用 inline-flex 来让它与其他内容在同一行 */
+  background-color: transparent;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  width: 30px; /* 设置固定宽度，确保按钮大小一致 */
+  height: 30px; /* 设置固定高度，确保按钮大小一致 */
+}
+/* 图片样式 */
+.s-icon-img {
+  width: 100%; /* 图片宽度占满按钮 */
+  height: 100%; /* 图片高度占满按钮 */
+  object-fit: contain; /* 等比例缩放，保持图片完整显示 */
+  display: block; /* 确保图片为块级元素，防止对齐问题 */
 }

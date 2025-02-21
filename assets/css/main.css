@@ -91,15 +91,20 @@ html, body {
   font-size: 15px;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
-  /*margin-top: 20px;  确保按钮离文字有一定间距 */
+  width: 15px; /* 设置固定宽度，确保按钮大小一致 */
+  height: 15px; /* 设置固定高度，确保按钮大小一致 */
 }
+
 /* 鼠标悬停时 */
 .social-icon:hover {
   background-color: #fff;
-  color:#ff6347; /*番茄红作为品牌色*/
+  color: #ff6347; /* 番茄红作为品牌色 */
 }
-/* 图标居中 */
-.social-icon i {
-  display: inline-block;
-  text-align: center;
+
+/* 图片样式 */
+.social-icon-img {
+  width: 100%; /* 图片宽度占满按钮 */
+  height: 100%; /* 图片高度占满按钮 */
+  object-fit: contain; /* 等比例缩放，保持图片完整显示 */
+  display: block; /* 确保图片为块级元素，防止对齐问题 */
 }
