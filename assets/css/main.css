@@ -9,13 +9,11 @@ html, body {
   overflow-x: hidden;
   color: white;
 }
-/*首页背景布局*/
-.home{
-  width:100vw;/*元素的宽度为视口宽度*/
-  height:100vh;/*元素的高度为视口高度*/
-  padding-top: 100px;/*内部的顶部有 100px 的内边距*/
-  padding-bottom: 50px; /* 添加底部内边距 */
-  justify-content: flex-end; /* 将子元素在垂直方向上靠下对齐 */
+/* 修正父级容器设置 */
+.home {
+  padding-top: 550px;
+  padding-bottom: 50px;
+  overflow: visible; /* 关键设置：允许伪元素溢出 */
 }
 /*首页文本布局*/
 .home-text {
@@ -33,15 +31,35 @@ html, body {
   object-fit: cover;/* 确保视频完整覆盖背景 */
   z-index: -2;/* 确保视频在内容后面 */
 }
-/*关于背景布局-模糊延伸到下一个界面*/
-.about{
-  width:100vw;/*元素的宽度为视口宽度*/
-  height:100vh;/*元素的高度为视口高度*/
-  /* 高斯模糊 */
-  background: rgba(0, 0, 0, 0.649); /* 半透明背景 */
-  backdrop-filter: blur(10px); /* 高斯模糊 */
-  -webkit-backdrop-filter: blur(10px); /* 兼容 Safari */
-  z-index: -1; /* 确保模糊背景不覆盖内容 */
+/*关于页面布局*/
+.about {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* 背景容器 */
+.about::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 100px);
+  background: rgba(0, 0, 0, 0.649);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    black 100px
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    black 100px
+  );
+  z-index: -1;
 }
 /*关于文本布局*/
 .about-text {
@@ -50,6 +68,7 @@ html, body {
   justify-content: flex-start; /* 将子元素在垂直方向上居中对齐 */
   align-items: center; /* 将子元素在水平方向上居中对齐 */
   padding-top: 70px; /* 添加顶部内边距 */
+  padding-bottom: 50px;
 }
 /*标题文本*/
 .text1 {
