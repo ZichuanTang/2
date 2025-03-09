@@ -1,53 +1,71 @@
-.about-img{
-  width: 384px;  /* 固定宽度为384px (4寸) */
-  height: auto;  /* 高度自适应，根据图片的宽高比自动调整 */
+.about-img {
+  width: 100%; /* 宽度自适应，防止超出 */
+  max-width: 300px; /* 最大宽度限制，防止过大 */
+  height: auto; /* 等比例缩放 */
+  border-radius: 10px; /* 轻微圆角，增加美观 */
+  display: block;
+  margin: 0 auto 20px; /* 居中 */
 }
-.text3{
-  font-size: 26px;
-  margin-top:52px;/*距离其上方元素的间距*/
-  font-weight: 300;/*粗细*/
-  /*max-width: 900px;  你可以根据需求调整这个最大宽度 */
-  font-family: 'SimKai', 'KaiTi', sans-serif; /* 设置行书字体 */
-  display: flex; /* 启用 Flexbox 布局 */
-  justify-content: center; /* 垂直方向上居中对齐 */
+
+.text3 {
+  font-size: 24px; /* 默认字体大小 */
+  margin-top: 40px;
+  font-weight: 300;
+  font-family: 'SimKai', 'KaiTi', sans-serif;
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  align-items: center; /* 水平居中 */
+  text-align: center; /* 文字居中 */
 }
+
+.text3 h2 {
+  font-size: 32px;
+  margin: 10px 0;
+}
+
+.text3 p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
 .text3 .english {
-  font-family: 'Georgia', 'Times New Roman', serif; /* 英文使用不同的字体 */
-  font-style: italic; /* 英文部分设置斜体 */
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-style: italic;
 }
-.about h2{
-  margin-top:12px;/*距离其上方元素的间距*/
-  margin-left: 20px; /* 距离左边的间距 */
-  font-size: 40px;
-  font-weight: 300;/*粗细*/
-}
-.about p{
-  margin-top:12px;/*距离其上方元素的间距*/
-  font-size: 26px;
-  font-weight: 300;/*粗细*/
-}
-/* 设置链接的默认颜色 */
-.about p a {
-    color: #ffffff; /* 设置为番茄红，您可以根据需求修改颜色 */
-    text-decoration: none; /* 去除链接下划线 */
-}
-/*--------------------------------------------------------------
-# 一些牛逼的个人网站:
---------------------------------------------------------------*/
-/* 圆形透明按钮样式 */
-.s-icon {
-  position: relative; /* 相对定位 */
-  display: inline-flex; /* 使用 inline-flex 来让它与其他内容在同一行 */
-  background-color: transparent;
+
+/* 链接样式 */
+.text3 p a {
+  color: #ffffff;
   text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
-  width: 30px; /* 设置固定宽度，确保按钮大小一致 */
-  height: 30px; /* 设置固定高度，确保按钮大小一致 */
 }
-/* 图片样式 */
+
+/* 移动端优化 */
+@media screen and (max-width: 768px) {
+  .text3 {
+    font-size: 18px;
+  }
+  
+  .text3 h2 {
+    font-size: 24px;
+  }
+
+  .text3 p {
+    font-size: 16px;
+  }
+
+  .about-img {
+    max-width: 200px; /* 小屏幕时图片缩小 */
+  }
+}
+.s-icon {
+  width: 20px; /* 图标容器缩小 */
+  height: 20px;
+  display: inline-block;
+  margin: 5px; /* 调整间距 */
+}
+
 .s-icon-img {
-  width: 100%; /* 图片宽度占满按钮 */
-  height: 100%; /* 图片高度占满按钮 */
-  object-fit: contain; /* 等比例缩放，保持图片完整显示 */
-  display: block; /* 确保图片为块级元素，防止对齐问题 */
+  width: 100%; /* 让图片填充容器 */
+  height: 100%;
+  object-fit: contain; /* 确保图片完整显示 */
 }
