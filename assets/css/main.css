@@ -9,6 +9,10 @@ html, body {
   overflow-x: hidden;
   color: white;
 }
+body {
+  font-family: 'Poppins', 'Roboto', 'Arial', sans-serif !important;
+}
+
 /* 修正父级容器设置 */
 .home {
   padding-top: 550px;
