@@ -28,25 +28,37 @@
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!--导入typed打字动效-->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <!-- 引入 Bootstrap Icons -->
+    <!-- 引入 Bootstrap Icons 图标-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- 引入main.js-->
-    <script src="assets/js/main.js"></script>
-    
-     <!-- waifu-tips.js 依赖 JQuery 库 
-     <script src="assets/jquery.min.js?v=3.3.1"></script>-->
-     <!-- 实现拖动效果，需引入 JQuery UI 
-     <script src="assets/jquery-ui.min.js?v=1.12.1"></script>-->
-     <!-- 使用 aotuload.js 引入看板娘 
-     <script src="assets/autoload.js?v=1.4.2"></script>-->
-     
+
 </head>
 
 <body>
+
+    <script type="text/javascript">
+        // 确保 AOS 动效初始化
+       AOS.init();
+       // 确保打字效果初始化
+       const selectTyped = document.querySelector('.typed');
+       if (selectTyped) {
+       let typed_strings = selectTyped.getAttribute('data-typed-items');
+       typed_strings = typed_strings.split(',');
+       new Typed('.typed', {
+           strings: typed_strings,
+           loop: true,
+           typeSpeed: 100,
+           backSpeed: 50,
+           backDelay: 2000
+       });
+       }
+   </script>
+
     <!--视频背景-->
     <video autoplay loop muted playsinline class="home-video">
         <source src="assets/video.mp4" type="video/mp4">
-      </video>
+        <source src="assets/video.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
       
     <!--home-->
     <div class="home home-text">
@@ -132,21 +144,5 @@
         </div>
     </div>
 </body>
-<script type="text/javascript">
-     // 确保 AOS 动效初始化
-    AOS.init();
-    // 确保打字效果初始化
-    const selectTyped = document.querySelector('.typed');
-    if (selectTyped) {
-    let typed_strings = selectTyped.getAttribute('data-typed-items');
-    typed_strings = typed_strings.split(',');
-    new Typed('.typed', {
-        strings: typed_strings,
-        loop: true,
-        typeSpeed: 100,
-        backSpeed: 50,
-        backDelay: 2000
-    });
-    }
-</script>
+
 </html>
