@@ -8,7 +8,7 @@
   font-style: normal;
 }
 
-/*整体页面布局*/
+/* 整体页面布局 */
 html, body {
   margin: 0;
   padding: 0;
@@ -16,29 +16,33 @@ html, body {
   overflow-x: hidden;
   color: white;
 }
+
 /* 修正父级容器设置 */
 .home {
-  padding-top: 550px;
-  padding-bottom: 50px;
+  padding-top: 10px;
+  padding-bottom: 25px;
   overflow: visible; /* 关键设置：允许伪元素溢出 */
 }
-/*首页文本布局*/
+
+/* 首页文本布局 */
 .home-text {
-  display: flex; /* 子元素使用 Flexbox 布局 */
-  flex-direction: column; /* 让子元素按列（纵向）排列 */
-  align-items: center; /* 将子元素在水平方向上居中对齐 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 /* 将视频作为背景 */
 .home-video {
-  position: fixed;/* 固定位置 */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;/* 确保视频完整覆盖背景 */
-  z-index: -2;/* 确保视频在内容后面 */
+  object-fit: cover;
+  z-index: -2;
 }
-/*关于页面布局*/
+
+/* 关于页面布局 */
 .about {
   position: relative;
   width: 100%;
@@ -53,84 +57,190 @@ html, body {
   left: 0;
   width: 100%;
   height: calc(100% + 100px);
-  background: rgba(0, 0, 0, 0.649);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0,
-    black 100px
-  );
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0,
-    black 100px
-  );
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  mask-image: linear-gradient(to bottom, transparent 0, black 100px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, black 100px);
   z-index: -1;
 }
-/*关于文本布局*/
+
+/* 关于文本布局 */
 .about-text {
-  display: flex; /* 子元素使用 Flexbox 布局 */
-  flex-direction: column; /* 让子元素按列（纵向）排列 */
-  justify-content: flex-start; /* 将子元素在垂直方向上居中对齐 */
-  align-items: center; /* 将子元素在水平方向上居中对齐 */
-  padding-top: 70px; /* 添加顶部内边距 */
-  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 10px;
 }
-/*标题文本*/
+
+/* 新增 .about-content 用于横向排列 */
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* 竖排文本 */
+.left-text {
+  writing-mode: vertical-rl; /* 保持文字竖排 */
+  text-align: center;
+  font-size: 25px;
+  font-weight: 300;
+  font-family: 'SimKai', 'KaiTi', sans-serif;
+  position: absolute; /* 使用绝对定位 */
+  left: 90px; /* 距离左侧的距离，可以根据需要调整 */
+  top: 50%; /* 垂直居中 */
+  transform: translateY(-50%); /* 确保垂直居中对齐 */
+}
+
+/* 标题文本 */
 .text1 {
-  font-size: 80px; /* 设置字体大小为 80px */
+  font-size: 80px;
   color: white;
-  font-family: 'SimKai', 'KaiTi', sans-serif; /* 设置行书字体 */
+  font-family: 'SimKai', 'KaiTi', sans-serif;
 }
-/* 在同一个.text1元素实现英文部分设置斜体 */
+
+/* 英文部分斜体 */
 .text1 .english {
-  font-family: 'Georgia', 'Times New Roman', serif; /* 英文使用不同的字体 */
-  font-style: italic; /* 英文部分设置斜体 */
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-style: italic;
 }
-/*正文文本*/
-.text2{
+
+/* 正文文本 */
+.text2 {
   font-size: 26px;
-  margin-top:12px;/*距离其上方元素的间距*/
-  font-weight: 300;/*粗细*/
-  max-width: 900px; /* 你可以根据需求调整这个最大宽度 */
-  font-family: 'SimKai', 'KaiTi', sans-serif; /* 设置行书字体 */
-  display: flex; /* 启用 Flexbox 布局 */
-  justify-content: center; /* 垂直方向上居中对齐 */
-  align-items: center; /* 水平方向上居中对齐 */
-  text-align: center; /* 水平对齐文本 */
+  font-weight: 300;
+  max-width: 400px;
+  font-family: 'SimKai', 'KaiTi', sans-serif;
+  text-align: center;
+  flex: 1;
 }
+
 /*--------------------------------------------------------------
 # 圆形图标
 --------------------------------------------------------------*/
 /* 圆形透明按钮样式 */
 .social-icon {
-  position: relative; /* 相对定位 */
-  display: inline-flex; /* 使用 inline-flex 来让它与其他内容在同一行 */
-  justify-content: center; /* 水平居中 */
-  align-items: center; /* 垂直居中 */
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
-  border-radius: 100%; /* 让按钮变成圆形 */
+  border-radius: 100%;
   padding: 10px;
-  border: 2px solid #fff; /* 白色边框 */
+  border: 2px solid #fff;
   color: #fff;
   font-size: 15px;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
-  width: 15px; /* 设置固定宽度，确保按钮大小一致 */
-  height: 15px; /* 设置固定高度，确保按钮大小一致 */
+  width: 15px;
+  height: 15px;
 }
 
-/* 鼠标悬停时 */
+/* 鼠标悬停效果 */
 .social-icon:hover {
   background-color: #fff;
-  color: #ff6347; /* 番茄红作为品牌色 */
+  color: #ff6347;
 }
 
 /* 图片样式 */
 .social-icon-img {
-  width: 100%; /* 图片宽度占满按钮 */
-  height: 100%; /* 图片高度占满按钮 */
-  object-fit: contain; /* 等比例缩放，保持图片完整显示 */
-  display: block; /* 确保图片为块级元素，防止对齐问题 */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* 头像图片样式 */
+.about-img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+/* 额外文本样式 */
+.text3 {
+  font-size: 24px;
+  font-weight: 300;
+  font-family: 'SimKai', 'KaiTi', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text3 h2 {
+  font-size: 32px;
+  margin: 10px 0;
+}
+
+.text3 .english {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-style: italic;
+}
+
+/* 横向排列容器 */
+.text3-content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* 每列样式 */
+.text3-item {
+  flex: 1;
+  text-align: left;
+}
+
+.text3-item p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.text3-item p a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* 移动端优化 */
+@media screen and (max-width: 768px) {
+  .text3 {
+    font-size: 18px;
+    max-width: 100%;
+  }
+
+  .text3 h2 {
+    font-size: 24px;
+  }
+
+  .text3-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text3-item {
+    text-align: center;
+  }
+
+  .text3-item p {
+    font-size: 16px;
+  }
+}
+
+/* 小型社交图标 */
+.s-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin: 5px;
+}
+
+.s-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }

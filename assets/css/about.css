@@ -1,31 +1,23 @@
 .about-img {
-  width: 100%; /* 宽度自适应 */
-  max-width: 300px; /* 限制最大宽度 */
-  height: auto; /* 等比例缩放 */
-  border-radius: 50%; /* 让图片变成圆形 */
+  width: 100%;
+  max-width: 250px; /* 横向布局时缩小图片 */
+  height: auto;
+  border-radius: 50%;
   display: block;
-  margin: 0 auto 20px; /* 居中 */
+  margin: 0 auto 20px;
 }
 
-
 .text3 {
-  font-size: 24px; /* 默认字体大小 */
-  margin-top: 40px;
+  font-size: 24px;
   font-weight: 300;
   font-family: 'SimKai', 'KaiTi', sans-serif;
-  display: flex;
-  flex-direction: column; /* 垂直排列 */
-  align-items: center; /* 水平居中 */
-  text-align: center; /* 文字居中 */
+  display: flex; /* 启用 Flexbox */
+  flex-direction: column; /* 保持图片和标题纵向排列 */
+  align-items: center; /* 居中对齐 */
 }
 
 .text3 h2 {
   font-size: 32px;
-  margin: 10px 0;
-}
-
-.text3 p {
-  font-size: 20px;
   margin: 10px 0;
 }
 
@@ -34,8 +26,26 @@
   font-style: italic;
 }
 
+/* 新增横向排列容器 */
+.text3-content {
+  display: flex;
+  flex-direction: row; /* 右侧内容横向排列 */
+  gap: 20px;
+}
+
+/* 每一列的样式 */
+.text3-item {
+  flex: 1; /* 每列宽度均分 */
+  text-align: left; /* 内容左对齐 */
+}
+
+.text3-item p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
 /* 链接样式 */
-.text3 p a {
+.text3-item p a {
   color: #ffffff;
   text-decoration: none;
 }
@@ -43,19 +53,25 @@
 /* 移动端优化 */
 @media screen and (max-width: 768px) {
   .text3 {
-    font-size: 18px;
+      font-size: 18px;
+      max-width: 100%; /* 小屏幕占满宽度 */
   }
-  
+
   .text3 h2 {
-    font-size: 24px;
+      font-size: 24px;
   }
 
-  .text3 p {
-    font-size: 16px;
+  .text3-content {
+      flex-direction: column; /* 小屏幕恢复纵向排列 */
+      align-items: center; /* 居中对齐 */
   }
 
-  .about-img {
-    max-width: 200px; /* 小屏幕时图片缩小 */
+  .text3-item {
+      text-align: center; /* 小屏幕内容居中 */
+  }
+
+  .text3-item p {
+      font-size: 16px;
   }
 }
 .s-icon {
