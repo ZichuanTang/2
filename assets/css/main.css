@@ -38,15 +38,35 @@ html, body {
 
 
 .left-text {
-  writing-mode: vertical-rl; /* 保持文字竖排 */
+  writing-mode: vertical-rl;
   text-align: center;
   font-size: 25px;
   font-weight: 300;
   font-family: 'SimKai', 'KaiTi', sans-serif;
-  position: absolute; /* 使用绝对定位 */
-  left: 90px; /* 距离左侧的距离，可以根据需要调整 */
-  top: 50%; /* 垂直居中 */
-  transform: translateY(-50%); /* 确保垂直居中对齐 */
+  position: absolute;
+  left: 90px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 800px; /* 设置固定高度，增加长度 */
+  display: flex; /* 使用 flex 布局 */
+  align-items: center; /* 文字垂直居中 */
+  justify-content: center; /* 文字水平居中 */
+}
+
+.left-text-2 {
+  writing-mode: vertical-rl;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 300;
+  font-family: 'SimKai', 'KaiTi', sans-serif;
+  position: absolute;
+  left: 1500px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 800px; /* 设置固定高度，增加长度 */
+  display: flex; /* 使用 flex 布局 */
+  align-items: center; /* 文字垂直居中 */
+  justify-content: center; /* 文字水平居中 */
 }
 
 .text1{
